@@ -5,20 +5,28 @@
  * @format
  * @flow strict-local
  */
-
 import React from 'react';
-import {SafeAreaView, StyleSheet, ScrollView, StatusBar} from 'react-native';
+import {SafeAreaView, StyleSheet, ScrollView} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import Landing from './Views/Landing';
+
+const Stack = createStackNavigator();
 
 const App: () => React$Node = () => {
   return (
     <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}
-        />
-      </SafeAreaView>
+      <NavigationContainer>
+        <SafeAreaView>
+          <ScrollView
+            contentInsetAdjustmentBehavior="automatic"
+            style={styles.scrollView}>
+            <Stack.Navigator>
+              <Stack.Screen name="Landing" component={Landing} />
+            </Stack.Navigator>
+          </ScrollView>
+        </SafeAreaView>
+      </NavigationContainer>
     </>
   );
 };

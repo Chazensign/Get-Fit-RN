@@ -1,17 +1,33 @@
 {
-  "name": "getfitrn",
+  "name": "GetFitApp",
   "version": "0.0.1",
   "private": true,
+  "main": "server.js",
+  "proxy": "http://localhost:4321",
   "scripts": {
-    "android": "react-native run-android",
+    "android": "cd ./android && ./gradlew app:assembleDebug && ./gradlew installDebug",
     "ios": "react-native run-ios",
     "start": "react-native start",
+    "server": "nodemon ./server.js",
     "test": "jest",
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-navigation/native": "^5.5.1",
+    "@react-navigation/stack": "^5.5.1",
+    "axios": "^0.19.2",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "googleapis": "^52.1.0",
+    "massive": "^6.4.0",
+    "moment": "^2.26.0",
+    "nodemailer": "^6.4.8",
     "react": "16.11.0",
-    "react-native": "0.62.2"
+    "react-native": "0.62.2",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5"
   },
   "devDependencies": {
     "@babel/core": "7.10.2",
